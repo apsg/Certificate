@@ -1,0 +1,44 @@
+{
+    "name": "apsg/certificate",
+    "description": "Create PDF certificates",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Szymon Gackowski",
+            "email": "szymon@gackowski.edu.pl",
+            "homepage": "http://gackowski.edu.pl"
+        }
+    ],
+    "homepage": "https://github.com/apsg/certificate",
+    "keywords": ["Laravel", "Certificate"],
+    "require": {
+        "illuminate/support": "~5|~6",
+        "apsg/fpdi-fpdf": "v2.3.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0",
+        "mockery/mockery": "^1.1",
+        "orchestra/testbench": "~3|~4",
+        "sempro/phpunit-pretty-print": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Apsg\\Certificate\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Apsg\\Certificate\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Apsg\\Certificate\\CertificateServiceProvider"
+            ],
+            "aliases": {
+                "Certificate": "Apsg\\Certificate\\Facades\\Certificate"
+            }
+        }
+    }
+}
