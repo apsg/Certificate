@@ -10,7 +10,10 @@
         }
     ],
     "homepage": "https://github.com/apsg/certificate",
-    "keywords": ["Laravel", "Certificate"],
+    "keywords": [
+        "Laravel",
+        "Certificate"
+    ],
     "require": {
         "illuminate/support": "~5|~6",
         "apsg/fpdi-fpdf": "v2.3.1"
@@ -40,5 +43,8 @@
                 "Certificate": "Apsg\\Certificate\\Facades\\Certificate"
             }
         }
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit"
     }
 }
