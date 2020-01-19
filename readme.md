@@ -12,7 +12,7 @@ This is where your description should go. Take a look at [contributing.md](contr
 Via Composer
 
 ``` bash
-$ composer require apsg/certificates
+$ composer require apsg/certificate
 ```
 
 ## Usage
@@ -44,14 +44,14 @@ If you discover any security related issues, please email author email instead o
 
 license. Please see the [license file](license.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/apsg/certificates.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/apsg/certificates.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/apsg/certificates/master.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/apsg/certificate.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/apsg/certificate.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/apsg/certificate/master.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/12345678/shield
 
-[link-packagist]: https://packagist.org/packages/apsg/certificates
-[link-downloads]: https://packagist.org/packages/apsg/certificates
-[link-travis]: https://travis-ci.org/apsg/certificates
+[link-packagist]: https://packagist.org/packages/apsg/certificate
+[link-downloads]: https://packagist.org/packages/apsg/certificate
+[link-travis]: https://travis-ci.org/apsg/certificate
 [link-styleci]: https://styleci.io/repos/12345678
 [link-author]: https://github.com/apsg
 [link-contributors]: ../../contributors
