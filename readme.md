@@ -27,7 +27,7 @@ $certificate = new Certificate(null, new A4LandscapeFormat());
 
 return $certificate
     ->setBackground('/path/to/file.png')
-    ->addField(new Field('test text', 10, 100))
+    ->addField(new Field('zażółć gęślą jaźń', 10, 100))
     ->generate();
 // this will output the pdf to browser to download
  
