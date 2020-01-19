@@ -2,6 +2,8 @@
 
 namespace Apsg\Certificate\Formats;
 
+use InvalidArgumentException;
+
 class Format implements FormatInterface
 {
     const SIZE_A3 = 'a3';
@@ -67,10 +69,10 @@ class Format implements FormatInterface
 
     protected function getDimensions(string $size)
     {
-//        if (!in_array($size, self::STANDARD_SIZES)) {
-//            throw \InvalidArgumentException('Unknown size');
-//        }
+        if (!array_key_exists(strtolower($size), self::STANDARD_SIZES)) {
+            throw new InvalidArgumentException('Unknown size');
+        }
 
-        return self::STANDARD_SIZES[$size];
+        return self::STANDARD_SIZES[strtolower($size)];
     }
 }

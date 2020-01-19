@@ -25,11 +25,12 @@ class Field implements FieldInterface
     /** @var string */
     protected $align = self::ALIGN_CENTER;
 
-    public function __construct(string $text, int $positionX = 0, int $positionY = 0)
+    public function __construct(string $text, int $positionX = 0, int $positionY = 0, int $size = 12)
     {
         $this->text = $text;
-        $this->positionX = $positionX;
-        $this->positionY = $positionY;
+
+        $this->setPosition($positionX, $positionY);
+        $this->setFontSize($size);
     }
 
     public function setPosition(int $x, int $y) : self
@@ -51,6 +52,21 @@ class Field implements FieldInterface
         }
 
         $this->fontSize = $size;
+
+        return $this;
+    }
+
+    public function setAlign(string $align) : self
+    {
+        if (!in_array($align, [
+            self::ALIGN_LEFT,
+            self::ALIGN_CENTER,
+            self::ALIGN_RIGHT,
+        ])) {
+            throw new InvalidArgumentException('Wrong align definition');
+        }
+
+        $this->align = $align;
 
         return $this;
     }
