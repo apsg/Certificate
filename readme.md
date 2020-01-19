@@ -23,13 +23,21 @@ use Apsg\Certificate\Certificate;
 use Apsg\Certificate\Fields\Field;
 use Apsg\Certificate\Formats\A4LandscapeFormat;
 
-$certificate = new Certificate(null, new A4LandscapeFormat());
+class CertificateController extends Controller
+{
+    /**
+     * This will output the pdf to browser to download
+     */
+    public function test()
+    {
+        $certificate = new Certificate(null, new A4LandscapeFormat());
 
-return $certificate
-    ->setBackground('/path/to/file.png')
-    ->addField(new Field('zażółć gęślą jaźń', 10, 100))
-    ->generate();
-// this will output the pdf to browser to download
+        return $certificate
+            ->setBackground(storage_path('app/public/tlo.png'))
+            ->addField(new Field('test zażółć gęślą', 10, 100, 20))
+            ->generate();
+    }
+}
  
 ```
 
