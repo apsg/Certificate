@@ -1,4 +1,5 @@
 <?php
+
 namespace Apsg\Certificate;
 
 use Apsg\Certificate\Colors\BlackColor;
@@ -23,10 +24,10 @@ class Certificate
     protected $fields = [];
 
     /** @var string */
-    protected $font = "DejaVuSans";
+    protected $font = 'DejaVuSans';
 
     /** @var string */
-    protected $fontFile = "DejaVuSans.php";
+    protected $fontFile = 'DejaVuSans.php';
 
     protected $pdf;
 
@@ -40,28 +41,28 @@ class Certificate
         $this->pdf->addPage($this->format->orientation(), $this->format->size());
     }
 
-    public function setBackground(string $backgroundPath) : self
+    public function setBackground(string $backgroundPath): self
     {
         $this->background = $backgroundPath;
 
         return $this;
     }
 
-    public function textColor(ColorInterface $color) : self
+    public function textColor(ColorInterface $color): self
     {
         $this->textColor = $color;
 
         return $this;
     }
 
-    public function addField(FieldInterface $field) : self
+    public function addField(FieldInterface $field): self
     {
         $this->fields[] = $field;
 
         return $this;
     }
 
-    public function setFont(string $font, string $file) : self
+    public function setFont(string $font, string $file): self
     {
         $this->font = $font;
         $this->fontFile = $file;
@@ -69,7 +70,7 @@ class Certificate
         return $this;
     }
 
-    public function setFormat(FormatInterface $format) : self
+    public function setFormat(FormatInterface $format): self
     {
         $this->format = $format;
 
@@ -85,7 +86,7 @@ class Certificate
         $this->pdf->SetFont($this->font, '', 12);
         $this->pdf->SetTextColor($this->textColor->r(), $this->textColor->g(), $this->textColor->b());
 
-        if (!empty($this->background)) {
+        if (! empty($this->background)) {
             $this->pdf->Image($this->background, 0, 0, $this->format->width(), $this->format->height());
         }
 
@@ -96,10 +97,10 @@ class Certificate
         return $this->pdf->Output();
     }
 
-    protected function generateField(FieldInterface $field) : void
+    protected function generateField(FieldInterface $field): void
     {
         $this->pdf->SetXY($field->x(), $field->y());
         $this->pdf->SetFont($this->font, '', $field->size());
-        $this->pdf->cell("0", "0", $field->text(), 0, 1, $field->align());
+        $this->pdf->cell('0', '0', $field->text(), 0, 1, $field->align());
     }
 }

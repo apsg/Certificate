@@ -31,7 +31,7 @@ class CertificateServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/certificate.php', 'certificate');
+        $this->mergeConfigFrom(__DIR__ . '/../config/certificate.php', 'certificate');
 
         // Register the service the package provides.
         $this->app->singleton('certificate', function ($app) {
@@ -58,7 +58,7 @@ class CertificateServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/../config/certificate.php' => config_path('certificate.php'),
+            __DIR__ . '/../config/certificate.php' => config_path('certificate.php'),
         ], 'certificate.config');
 
         // Publishing the views.

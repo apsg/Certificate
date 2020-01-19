@@ -33,10 +33,10 @@ class Field implements FieldInterface
         $this->setFontSize($size);
     }
 
-    public function setPosition(int $x, int $y) : self
+    public function setPosition(int $x, int $y): self
     {
         if ($x < 0 || $y < 0) {
-            throw  new InvalidArgumentException("Position must be positive");
+            throw  new InvalidArgumentException('Position must be positive');
         }
 
         $this->positionX = $x;
@@ -45,10 +45,10 @@ class Field implements FieldInterface
         return $this;
     }
 
-    public function setFontSize(int $size) : self
+    public function setFontSize(int $size): self
     {
         if ($size < 1) {
-            throw  new InvalidArgumentException("Provide valid font size");
+            throw  new InvalidArgumentException('Provide valid font size');
         }
 
         $this->fontSize = $size;
@@ -56,9 +56,9 @@ class Field implements FieldInterface
         return $this;
     }
 
-    public function setAlign(string $align) : self
+    public function setAlign(string $align): self
     {
-        if (!in_array($align, [
+        if (! in_array($align, [
             self::ALIGN_LEFT,
             self::ALIGN_CENTER,
             self::ALIGN_RIGHT,
@@ -71,32 +71,32 @@ class Field implements FieldInterface
         return $this;
     }
 
-    public function x() : int
+    public function x(): int
     {
         return $this->positionY;
     }
 
-    public function y() : int
+    public function y(): int
     {
         return $this->positionY;
     }
 
-    public function size() : int
+    public function size(): int
     {
         return $this->fontSize;
     }
 
-    public function align() : string
+    public function align(): string
     {
         return $this->align;
     }
 
-    public function text() : string
+    public function text(): string
     {
         return $this->convert($this->text);
     }
 
-    protected function convert(string $string) : string
+    protected function convert(string $string): string
     {
         return iconv('UTF-8', 'ISO-8859-2', $string);
     }

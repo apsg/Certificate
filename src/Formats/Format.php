@@ -31,7 +31,7 @@ class Format implements FormatInterface
         $this->orientation = $orientation;
     }
 
-    public function width() : int
+    public function width(): int
     {
         if ($this->orientation === self::PORTRAIT) {
             return $this->getDimensions($this->size)[0];
@@ -44,7 +44,7 @@ class Format implements FormatInterface
         return 0;
     }
 
-    public function height() : int
+    public function height(): int
     {
         if ($this->orientation === self::PORTRAIT) {
             return $this->getDimensions($this->size)[1];
@@ -57,19 +57,19 @@ class Format implements FormatInterface
         return 0;
     }
 
-    public function orientation() : string
+    public function orientation(): string
     {
         return $this->orientation;
     }
 
-    public function size() : string
+    public function size(): string
     {
         return $this->size;
     }
 
     protected function getDimensions(string $size)
     {
-        if (!array_key_exists(strtolower($size), self::STANDARD_SIZES)) {
+        if (! array_key_exists(strtolower($size), self::STANDARD_SIZES)) {
             throw new InvalidArgumentException('Unknown size');
         }
 
