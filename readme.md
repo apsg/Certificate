@@ -5,7 +5,9 @@
 [![Build Status][ico-travis]][link-travis] 
 [![StyleCI][ico-styleci]][link-styleci] 
 
-This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
+Helper package to provide easy PDF certificates generation. 
+It uses FPDI/FPDF under the hood and is configured to provide support for Polish language.
+It works as a Laravel 5/6 package but there is not much of Laravel specific functionality added, so it can be used in other projects as well.
 
 ## Installation
 
