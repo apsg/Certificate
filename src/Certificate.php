@@ -37,8 +37,6 @@ class Certificate
 
         $this->pdf = $pdf ?? new Fpdi();
 
-        dd($this->format->orientation());
-
         $this->pdf->addPage($this->format->orientation(), $this->format->size());
     }
 

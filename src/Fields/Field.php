@@ -93,6 +93,11 @@ class Field implements FieldInterface
 
     public function text() : string
     {
-        return $this->text;
+        return $this->convert($this->text);
+    }
+
+    protected function convert(string $string) : string
+    {
+        return iconv('UTF-8', 'ISO-8859-2', $string);
     }
 }
